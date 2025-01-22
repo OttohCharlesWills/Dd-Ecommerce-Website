@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wills Gadget-Store</title>
+    <link rel="stylesheet" href="Index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <nav>
+        <div class="navTop">
+            <div class="navItem">
+                <img src="assets/Wills charles.png" alt="Logo">
+            </div>
+            <div class="navItem">
+                <div class="search">
+                    <input type="search" placeholder="Search..." class="searchInput">
+                    <i class='bx bx-search-alt-2 searchicon'></i>
+                </div>
+            </div>
+            <!-- Upload button (admin only) -->
+            <div class="special-buttons">
+                <small class="limited-offer">Limited Offer!</small>
+                <button id="uploadBtn" style="display: none;" onclick="showUploadModal()">Upload Product</button>
+                <button id="signOutBtn" style="display: none;" onclick="signOut()">Sign Out</button>
+            </div>
+        </div>
+        <div class="navBottom">
+            <h3 class="menuItem">Ipad</h3>
+            <h3 class="menuItem">Laptop Power Bank</h3>
+            <h3 class="menuItem">Mp3</h3>
+            <h3 class="menuItem">Headset</h3>
+            <h3 class="menuItem">Power Bank</h3>
+        </div>
+    </nav>
+    <div class="slider">
+        <div class="sliderWrapper">
+            <div class="sliderItem">
+                <img src="assets/ipad.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">Fairly Used <br> Ipad</h1>
+                <h2 class="sliderPrice">400k</h2>
+                <a href="#payment"><button class="buyButton">BUY NOW!</button></a>
+            </div>
+            <div class="sliderItem">
+                <img src="assets/lap.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">Laptop Power<br>Bank</h1>
+                <h2 class="sliderPrice">350k</h2>
+                <a href="#payment"><button class="buyButton">BUY NOW!</button></a>
+            </div>
+            <div class="sliderItem">
+                <img src="assets/jbl.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">Bluetoth<br>Speaker</h1>
+                <h2 class="sliderPrice">100k</h2>
+                <a href="#payment"><button class="buyButton">BUY NOW!</button></a>
+            </div>
+            <div class="sliderItem">
+                <img src="assets/set.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">Headset</h1>
+                <h2 class="sliderPrice">200k</h2>
+                <a href="#payment"><button class="buyButton">BUY NOW!</button></a>
+            </div>
+            <div class="sliderItem">
+                <img src="assets/bank.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">Super Power<br>Bank</h1>
+                <h2 class="sliderPrice">100k</h2>
+                <a href="#payment"><button class="buyButton">BUY NOW!</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="features">
+        <div class="feature">
+            <i class='bx bxs-truck'></i>
+            <span class="featureTitle">FREE DELIVERY</span>
+            <span class="featureDesc">Not-Free Nigeria Delivery</span>
+        </div>
+        <div class="feature">
+            <i class='bx bx-package'></i>
+            <span class="featureTitle">30 DAYS RETURN</span>
+            <span class="featureDesc">No Refunds</span>
+        </div>
+        <div class="feature">
+            <i class='bx bx-credit-card-front'></i>
+            <span class="featureTitle">GIFT CARDS</span>
+            <span class="featureDesc">Buys Gift Card And Get 1 EarPeice Free</span>
+        </div>
+        <div class="feature">
+            <i class='bx bx-paper-plane' ></i>
+            <span class="featureTitle">CONTACT US</span>
+            <span class="featureDesc">Keep Intouch Via Email & Phone Number</span>
+        </div>
+    </div>
+    <div id="payment" class="product">
+        <img src="assets/ipad.png" alt="" class="productImg">
+        <div class="productDetails">
+            <h1 class="productTitle">Fairly Used Ipad</h1>
+            <h2 class="productPrice">400k</h2>
+            <p class="productDesc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum repudiandae voluptas, quasi ex deleniti culpa vero sit saepe ad deserunt praesentium commodi, ullam perspiciatis reprehenderit, veritatis labore magnam tenetur quia?</p>
+            <button class="productButton">BUY NOW!</button>
+        </div>
+        <div class="payment">
+            <h1 class="payTitle">Personal Information</h1>
+                <label>Name and Surname</label>
+                <input type="text" placeholder="Francis Ugwulor" class="payInput" required>
+                <label>Phone Number</label>
+                <input type="text" placeholder="+234 9054339875" class="payInput" required>
+                <label>Address:</label>
+                <input type="text" placeholder="Igwruta Bush" class="payInput" required>
+                <h1 class="payTitle">Card Information</h1>
+                <div class="cardIcons">
+                    <i>verve</i>
+                    <i>mastercard</i>
+                </div>
+                <input type="password" placeholder="Card Number" class="payInput" required>
+                <div class="cardInfo">
+                    <input type="text" placeholder="mm" class="payInput sm">
+                    <input type="text" placeholder="yy" class="payInput sm">
+                    <input type="text" placeholder="cvv" class="payInput sm">
+                </div>
+                <button class="payButton">Check Out!</button>
+                <span class="close">X</span>
+        </div>
+    </div>
+
+    <h1 id="h1">Product Listing</h1>
+
+    <ul id="products"></ul>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeUploadModal()">&times;</span>
+            <form id="uploadForm" onsubmit="uploadProduct(event)">
+                <input type="text" id="productName" placeholder="Product Name" required>
+                <textarea id="productDescription" placeholder="Product Description" required></textarea>
+                <input type="file" id="productImage" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="galleryItem">
+            <h1 class="galleryTitle">Be Yourself</h1>
+            <img src="/assets/660.png" alt="A lady with a phone" class="galleryImg">
+        </div>
+        <div class="galleryItem">
+            <img src="/assets/boy.png" alt="A boy with a Phone" class="galleryImg">
+            <h1 class="galleryTitle">Try Something New</h1>
+        </div>
+        <div class="galleryItem">
+            <h1 class="galleryTitle">Explore The Phoneverse</h1>
+            <img src="/assets/samsung.webp" alt="Samsung Device" class="galleryImg">
+        </div>
+    </div>
+    <div class="newSeason">
+        <div class="nsItem">
+            <img src="assets/note13.jpg" alt="Redmi" class="nsImg">
+        </div>
+        <div class="nsItem">
+            <h3 class="nsTitleSm">DRY SEASON ARRIVAL</h3>
+            <h1 class="nsTitle">New Season</h1>
+            <h1 class="nsTitle">New Collection</h1>
+            <a href="#h1"><button class="nsButton">CHOOSE YOUR STYLE</button></a>
+        </div>
+        <div class="nsItem">
+            <img src="assets/galazy.jpg" alt="Infinix" class="nsImg">
+        </div>
+    </div>
+    <footer>
+        <div class="footerLeft">
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">About Us</h1>
+                <ul class="fList">
+                    <li class="fListItem">Company</li>
+                    <li class="fListItem">Contact</li>
+                    <li class="fListItem">Careers</li>
+                    <li class="fListItem">Stores</li>
+                </ul>
+            </div>
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">Useful Links</h1>
+                <ul class="fList">
+                    <li class="fListItem">Support</li>
+                    <li class="fListItem">FAQ</li>
+                    <li class="fListItem">FeedBack</li>
+                    <li class="fListItem">Refunds</li>
+                </ul>
+            </div>
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">Products</h1>
+                <ul class="fList">
+                    <li class="fListItem">Ipad</li>
+                    <li class="fListItem">Laptop Power Bank</li>
+                    <li class="fListItem">Mp3</li>
+                    <li class="fListItem">Headset</li>
+                    <li class="fListItem">Power Bank</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerRight">
+            <div class="footerRightMenu">
+                <h1 class="fMenuTitle">Subcribe To Our Channel</h1>
+                <div class="fMail">
+                    <input type="text" placeholder="Your email@gmail.com" class="fInput">
+                    <button class="fbutton">Join!</button>
+                </div>
+            </div>
+            <div class="footerRightMenu">
+                <h1 class="fMenuTitle">Follow Us</h1>
+                <div class="fIcons">
+                    <i class="fIcon bx bxl-facebook-circle"></i>
+                    <i class="fIcon bx bxl-whatsapp"></i>
+                    <i class="fIcon bx bxl-twitter"></i>
+                    <i class="fIcon bx bxl-instagram"></i>
+                </div>
+            </div>
+            <div class="footerRightMenu">
+                <span class="copyright">@Wills Gadget-Store. All Rights Reserved, 2024.</span>
+            </div>
+        </div>
+    </footer>
+    <script src="Index.js"></script>
+</body>
+</html>
